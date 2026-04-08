@@ -6,7 +6,7 @@ from .models import Empresa, Usuario, Area, Equipo, PlanMantenimiento, OrdenTrab
 class CustomUserAdmin(UserAdmin):
     # Le decimos a Django que agregue nuestra sección al final de las opciones
     fieldsets = UserAdmin.fieldsets + (
-        ('Información de Mantenimiento (CMMS)', {'fields': ('rol', 'empresa')}),
+        ('Información de Mantenimiento (CMMS)', {'fields': ('rol', 'empresa', 'foto_perfil')}),
     )
 
 # 2. Registramos el usuario usando nuestra configuración personalizada

@@ -22,7 +22,9 @@ class Usuario(AbstractUser):
     )
     rol = models.CharField(max_length=20, choices=ROLES, default='ESTUDIANTE')
     empresa = models.ForeignKey(Empresa, on_delete=models.CASCADE, null=True, blank=True)
-    # La verificación de correo se maneja en las vistas o con librerías como django-allauth
+    
+    # NUEVO CAMPO: Foto de perfil
+    foto_perfil = models.ImageField(upload_to='fotos_perfil/', blank=True, null=True)
 
     def __str__(self):
         return f"{self.username} - {self.rol}"
